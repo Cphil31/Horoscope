@@ -1,22 +1,33 @@
 window.onload = function (){
+
+    let x = document.getElementsByTagName("BODY")[0];
+
+    let title = document.createElement("h1");
+    title.setAttribute("class","text-center my-5");
+    title.innerHTML="Horoscope des soukounian";
+    x.appendChild(title);
+
     
-    let ul = document.createElement("ul");
-    ul.style.listStyleType = "none";
-    //on selectionne la div du milieu 
-    let middle = document.querySelector(".midle");
-    middle.appendChild(ul);
+    let cont = document.createElement("div");
+    cont.setAttribute("class","container");
+    x.appendChild(cont);
+
+    let row = document.createElement("div");
+    row.setAttribute("class","row mt-5 ");
+    cont.appendChild(row);
+ 
     
-   
     //console.log(horoscope);
     for (d of horoscope){
-        //creation de li 
-        let li = document.createElement('li');
-        ul.appendChild(li);
-
+        //creation de col
+        let col = document.createElement('div');
+        col.setAttribute("class","col- mr-1");
+        row.appendChild(col);
+        
         //création de la carte 
         //on crée la div.card
         let divCard = document.createElement("div");
-        divCard.setAttribute("class","card");
+        divCard.setAttribute("class","card m-2");
         divCard.setAttribute("style","width: 18rem;");
         // on crée la balise img
         let img = document.createElement("img");
@@ -41,11 +52,12 @@ window.onload = function (){
         p.innerHTML=d.texte;
         //on ajoute la balise p a card body 
         cardBody.appendChild(p);
-
-        //on lie la card au li 
-        li.appendChild(divCard);
-
-        console.log(d);
-        ul.appendChild(li);
+        
+        
+        row.appendChild(divCard);
+        
     }
+    
+    
+    
 }
