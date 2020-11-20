@@ -4,7 +4,7 @@ window.onload = function (){
 
     let title = document.createElement("h1");
     title.setAttribute("class","text-center my-5");
-    title.innerHTML="Horoscope des soukounian";
+    title.innerHTML="L'Horoscope des Soukounians";
     x.appendChild(title);
 
     
@@ -13,21 +13,24 @@ window.onload = function (){
     x.appendChild(cont);
 
     let row = document.createElement("div");
-    row.setAttribute("class","row mt-5 ");
+    row.setAttribute("class","row  row-cols-1 row-cols-md-2 p-4");
     cont.appendChild(row);
- 
-    
+
     //console.log(horoscope);
     for (d of horoscope){
-        //creation de col
-        let col = document.createElement('div');
-        col.setAttribute("class","col- mr-1");
+        
+        let col =document.createElement("col");
+        col.setAttribute("class","col mb-4");
         row.appendChild(col);
+    
+        let cardDeck = document.createElement("div");
+        cardDeck.setAttribute("class","card-deck");
+        col.appendChild(cardDeck);
         
         //création de la carte 
         //on crée la div.card
         let divCard = document.createElement("div");
-        divCard.setAttribute("class","card m-2");
+        divCard.setAttribute("class","card");
         divCard.setAttribute("style","width: 18rem;");
         // on crée la balise img
         let img = document.createElement("img");
@@ -54,7 +57,7 @@ window.onload = function (){
         cardBody.appendChild(p);
         
         
-        row.appendChild(divCard);
+        cardDeck.appendChild(divCard);
         
     }
     
